@@ -16,6 +16,9 @@
  const SALAD_PRICE = 7.95;
  const SALES_TAX = 0.07;
  
+//Add event handler
+document.getElementById("chicken").onclick = calcTotal ();
+ 
  //calculate total cost of meal
  function calcTotal () {
 	 let cost = 0;
@@ -43,14 +46,17 @@ cost += buySalad ? SALAD_PRICE : 0.0;
 //Calaculate the tax total
 var tax = cost * SALES_TAX
 
+//calculate the total cost
+var totalCost = cost + tax
+
 //Display the total cost
-document.GetElementById("foodTotal").innerHTML = formatCurrency(cost);
+document.getElementById("foodTotal").innerHTML = formatCurrency(cost);
 
 //Display the total tax
-document.GetElementById("foodTax").innerHTML = formatCurrency(tax);
+document.getElementById("foodTax").innerHTML = formatCurrency(tax);
 
-
-
+//Display the total cost
+document.getElementById("totalBill").innerHTML = formatCurrency(totalCost);
  }
 
  
